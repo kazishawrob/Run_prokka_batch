@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Directory to store Prokka outputs
+output_directory="./Prokka_Results"
+
+# Create the output directory if it doesn't exist
+mkdir -p "$output_directory"
+
+# Loop over each .fna file in the current directory
+for fna_file in *.fna; do
+  # Get the base name of the file (without path and extension)
+  base_name=$(basename "$fna_file" .fna)
+  # Create an output folder named after the base name
+  output_folder="$output_directory/$base_name"
+  mkdir -p "$output_folder"
+  
+  # Run Prokka with the --force option to overwrite existing directories
+  prokka --outdir "$output_folder" --prefix "$base_name" --force "$fna_file"
+done
