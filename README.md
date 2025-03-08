@@ -3,8 +3,7 @@
 This Bash script automates the annotation of multiple `.fna` genome files using [Prokka](https://github.com/tseemann/prokka). Each genome file is processed individually, and results are stored in a structured output directory.
 
 ## Features
-- Loops through all `.fna` files in the current directory.
-- Creates an organized output directory (`Prokka_Results`).
+- Loops through all `.fna` or .fasta'files in the current directory. change the `.fna` to `.fasta ` Creates an organized output directory (`Prokka_Results`).
 - Generates separate result folders for each genome file.
 - Uses the `--force` option to overwrite existing directories if needed.
 
